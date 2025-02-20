@@ -11,22 +11,25 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
+         /* Floating Navigation */
+         .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         body {
             background-color: #f8f9fa;
         }
 
-        nav {
-            background-color: white;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+
 
         .logo {
             color: #00C805;
@@ -34,12 +37,30 @@
             font-weight: bold;
         }
 
-        .nav-links a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: #333;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
-        
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
         .hero {
             background: linear-gradient(135deg, #00C805 , #1C3F3A);
             color: white;
@@ -164,14 +185,19 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">InvestEd</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#courses">Courses</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+
+    
+
+ <!-- Floating Navigation -->
+ <nav class="navbar">
+    <div class="logo">SmartInvest</div>
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
 
     <section class="hero" id="home">
         <h1>Learn Robinhood Trading & Investing</h1>
@@ -203,7 +229,7 @@
                 <li>✓ Advanced Strategies</li>
                 <li>✓ Market Analysis</li>
                 <li>✓ Tax Optimization</li>
-                <li>✓ VIP Support</li>
+                <li>✓ Algorithmic Trading</li>
             </ul>
             <br></br>
 
@@ -257,8 +283,8 @@
 
 
     <footer>
-        <p>© 2023 InvestEd. All rights reserved.</p>
-        <p style="margin-top: 1rem;">Contact: support@invested.com</p>
+        <p>© 2025 SmartInvest. All rights reserved.</p>
+        <p style="margin-top: 1rem;">Contact: +1(800)295-5385 </p>
     </footer>
 </body>
 </html>
